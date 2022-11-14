@@ -137,10 +137,23 @@ p {
 /* секция под шапкой */
 .hero {
   background: var(--color-backgr-dark);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero.jpg);
+  max-width: 1600px;
+  max-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  position: relative;
 }
+
 .main-title {
   font-weight: 900;
   font-size: 44px;
@@ -265,7 +278,8 @@ p {
   justify-content: center;
   fill: #afb1b8;
 }
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--color-blue);
   fill: #ffffff;
 }
@@ -305,6 +319,33 @@ p {
 
   margin-bottom: 16px;
 }
+/* ------------------Секция клиенты ------------------- */
+.client-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.client-link {
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #afb1b8;
+}
+.client-link svg {
+  width: 106px;
+  height: 60px;
+}
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--color-blue);
+  fill: var(--color-blue);
+}
 /* Подвал сайта */
 .footer a {
   text-decoration: none;
@@ -313,6 +354,9 @@ p {
 .footer {
   background: var(--color-backgr-dark);
   padding: 60px 0px 60px;
+}
+.footer-container {
+  display: flex;
 }
 .logo-footer {
   display: inline-block;
@@ -346,6 +390,52 @@ p {
 .footer-item:first-child {
   margin-bottom: 9px;
 }
+.footer-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  margin-bottom: 20px;
+}
+.footer-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  padding-top: 12px;
+}
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-soc-item {
+  padding: 0px;
+}
+.footer-soc-link {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #ffffff;
+}
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--color-blue);
+  fill: #ffffff;
+}
+
+.icon-instagram {
+  width: 20px;
+  height: 20px;
+}
 
 /* СТИЛИ К СТРАНИЦЕ ПОРТФОЛИО */
 .portfolio {
@@ -377,18 +467,16 @@ p {
 .btn-portfolio:focus {
   background-color: var(--color-blue);
   color: #ffffff;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .list-works {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 30px;
-  /* padding-bottom: 94px; */
 }
-/* .works-item {
-    box-sizing: border-box;
-    border: 1px solid #eeeeee;
-  } */
+
 .work-border {
   border-left: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
@@ -412,4 +500,7 @@ p {
 }
 .works-item img {
   display: block;
+}
+.works-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
 }
